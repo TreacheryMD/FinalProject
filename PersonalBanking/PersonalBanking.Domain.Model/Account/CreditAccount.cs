@@ -6,15 +6,18 @@ using System.Threading.Tasks;
 
 namespace PersonalBanking.Domain.Model.Account
 {
-    class CreditAccount : BankAccount
+    public class CreditAccount : BankAccount
     {
         public virtual DateTime Reimbursement { get; }
 
-        public CreditAccount(Person person, string accNum, decimal newCreditAmmout, DateTime openDate, CurrencyTypes currency, DateTime reimbursementDate) :
+        public virtual double Rate { get; }
+
+        public CreditAccount(Person person, string accNum, decimal newCreditAmmout, DateTime openDate, CurrencyTypes currency, DateTime reimbursementDate, double rate) :
             base(person, newCreditAmmout, accNum + "CRED", openDate, currency)
         {
             if (reimbursementDate < DateTime.Now) throw new Exception($"Invalid field:{nameof(reimbursementDate)}<{DateTime.Now.ToShortDateString()}");
             Reimbursement = reimbursementDate;
+            Rate = rate;
         }
         public CreditAccount(string line) : base(line)
         {

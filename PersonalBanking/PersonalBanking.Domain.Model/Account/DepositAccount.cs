@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PersonalBanking.Domain.Model.Account
 {
-    class DepositAccount : BankAccount
+    public class DepositAccount : BankAccount
     {
         public virtual double DepIntRate { get; }
 

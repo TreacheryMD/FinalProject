@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PersonalBanking.Domain.Model.Account;
 
 namespace PersonalBanking.Domain.Model
 {
@@ -14,6 +15,7 @@ namespace PersonalBanking.Domain.Model
         public virtual DateTime BirthDate { get; protected internal set; }
         public virtual string FiscalCode { get; protected internal set; }
         public virtual GenderType Gender { get; protected internal set; }
+        public virtual IList<BankAccount> BankAccounts { get; protected internal set; }
 
         public Person(string firstName, string lastName, DateTime birthDate, string fiscalCode, GenderType gender)
         {

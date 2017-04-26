@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PersonalBanking.Domain.Model.Account
 {
-    class CurrentAccount : BankAccount
+    public class CurrentAccount : BankAccount
     {
         public virtual bool Restricted { get; set; }
         public CurrentAccount(Person person, decimal balance, string accNum, DateTime openDate, CurrencyTypes currency, bool restricted = false)
