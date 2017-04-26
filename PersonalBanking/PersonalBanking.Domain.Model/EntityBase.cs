@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MobileStore.Domain.Model
+namespace PersonalBanking.Domain.Model
 {
-    class EntityBase
+    public abstract class EntityBase
     {
+        public virtual int Id { get; set; }
     }
 }

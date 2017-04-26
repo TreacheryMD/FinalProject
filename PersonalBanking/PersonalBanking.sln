@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonalBanking.Tests", "Pe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonalBanking.Presentation", "PersonalBanking.Presentation\PersonalBanking.Presentation.csproj", "{860E5DC0-1D40-4959-BBF0-C72C30CD4257}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonalBanking.BLL", "PersonalBanking.BLL\PersonalBanking.BLL.csproj", "{26F4FE07-0EDF-4F34-8C73-AF1DBB1EB234}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{860E5DC0-1D40-4959-BBF0-C72C30CD4257}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{860E5DC0-1D40-4959-BBF0-C72C30CD4257}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{860E5DC0-1D40-4959-BBF0-C72C30CD4257}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26F4FE07-0EDF-4F34-8C73-AF1DBB1EB234}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26F4FE07-0EDF-4F34-8C73-AF1DBB1EB234}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26F4FE07-0EDF-4F34-8C73-AF1DBB1EB234}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26F4FE07-0EDF-4F34-8C73-AF1DBB1EB234}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
