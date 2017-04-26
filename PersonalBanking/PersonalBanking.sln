@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonalBanking.Domain.Model", "PersonalBanking.Domain.Model\PersonalBanking.Domain.Model.csproj", "{AC43B8FE-E977-4AF4-B004-D20F3D4AAE4C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonalBanking.Domain.Model.Mapping", "PersonalBanking.Domain.Model.Mapping\PersonalBanking.Domain.Model.Mapping.csproj", "{56E5A0D0-BB5B-41E3-9063-3BB02B6D5E64}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonalBanking.Infrastructure", "PersonalBanking.Infrastructure\PersonalBanking.Infrastructure.csproj", "{94EE8D29-34AD-4D08-9A6B-D597FAB3C91B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonalBanking.Repository", "PersonalBanking.Repository\PersonalBanking.Repository.csproj", "{E8A647BD-B8A3-4E7E-B6B8-DDA9F763B57B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonalBanking.Repository.Interface", "PersonalBanking.Repository.Interface\PersonalBanking.Repository.Interface.csproj", "{D0CBD424-FFB3-44F1-91D3-C879FD2FFCBE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonalBanking.Tests", "PersonalBanking.Tests\PersonalBanking.Tests.csproj", "{4F9450F6-EECE-47C1-9634-C6B952DC51BA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonalBanking.Presentation", "PersonalBanking.Presentation\PersonalBanking.Presentation.csproj", "{860E5DC0-1D40-4959-BBF0-C72C30CD4257}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AC43B8FE-E977-4AF4-B004-D20F3D4AAE4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC43B8FE-E977-4AF4-B004-D20F3D4AAE4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC43B8FE-E977-4AF4-B004-D20F3D4AAE4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC43B8FE-E977-4AF4-B004-D20F3D4AAE4C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56E5A0D0-BB5B-41E3-9063-3BB02B6D5E64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56E5A0D0-BB5B-41E3-9063-3BB02B6D5E64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56E5A0D0-BB5B-41E3-9063-3BB02B6D5E64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56E5A0D0-BB5B-41E3-9063-3BB02B6D5E64}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94EE8D29-34AD-4D08-9A6B-D597FAB3C91B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94EE8D29-34AD-4D08-9A6B-D597FAB3C91B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94EE8D29-34AD-4D08-9A6B-D597FAB3C91B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94EE8D29-34AD-4D08-9A6B-D597FAB3C91B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8A647BD-B8A3-4E7E-B6B8-DDA9F763B57B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8A647BD-B8A3-4E7E-B6B8-DDA9F763B57B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8A647BD-B8A3-4E7E-B6B8-DDA9F763B57B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8A647BD-B8A3-4E7E-B6B8-DDA9F763B57B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0CBD424-FFB3-44F1-91D3-C879FD2FFCBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0CBD424-FFB3-44F1-91D3-C879FD2FFCBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0CBD424-FFB3-44F1-91D3-C879FD2FFCBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0CBD424-FFB3-44F1-91D3-C879FD2FFCBE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F9450F6-EECE-47C1-9634-C6B952DC51BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F9450F6-EECE-47C1-9634-C6B952DC51BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F9450F6-EECE-47C1-9634-C6B952DC51BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F9450F6-EECE-47C1-9634-C6B952DC51BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{860E5DC0-1D40-4959-BBF0-C72C30CD4257}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{860E5DC0-1D40-4959-BBF0-C72C30CD4257}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{860E5DC0-1D40-4959-BBF0-C72C30CD4257}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{860E5DC0-1D40-4959-BBF0-C72C30CD4257}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
