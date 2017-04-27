@@ -28,9 +28,9 @@ namespace PersonalBanking.Presentation
             //p1.AddBankAccount(p1CurentEur);
 
             //personRepository.Add(p1);
-            var acc = bankAccountRepo.GetById(5);
+            //var acc = bankAccountRepo.GetById(5);
 
-            bankAccountRepo.Delete(acc);
+            //bankAccountRepo.Delete(acc);
 
         }
     }
