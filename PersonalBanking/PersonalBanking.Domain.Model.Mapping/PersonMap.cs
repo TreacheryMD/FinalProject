@@ -19,7 +19,7 @@ namespace PersonalBanking.Domain.Model.Mapping
             Map(x => x.FiscalCode).Unique().Not.Nullable();
             Map(x => x.Gender).Not.Nullable();
 
-            HasMany(x => x.BankAccounts).Inverse().KeyColumn("Id").Cascade.DeleteOrphan();
+            HasMany(x => x.BankAccounts).Inverse().KeyColumn("Person_Id").Cascade.AllDeleteOrphan().Cascade.SaveUpdate();
         }
     }
 }

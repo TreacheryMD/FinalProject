@@ -17,6 +17,7 @@ namespace PersonalBanking.Domain.Model
         public virtual GenderType Gender { get; protected internal set; }
         public virtual IList<BankAccount> BankAccounts { get; protected internal set; }
 
+
         public Person(string firstName, string lastName, DateTime birthDate, string fiscalCode, GenderType gender)
         {
             if (string.IsNullOrWhiteSpace(firstName)) throw new ArgumentNullException(nameof(firstName));
@@ -29,6 +30,7 @@ namespace PersonalBanking.Domain.Model
             BirthDate = birthDate;
             FiscalCode = fiscalCode;
             Gender = gender;
+            BankAccounts = new List<BankAccount>();
         }
 
         public Person()
@@ -38,8 +40,17 @@ namespace PersonalBanking.Domain.Model
             BirthDate = DateTime.Now;
             FiscalCode = "0000000000000";
             Gender = GenderType.Male;
+            BankAccounts = new List<BankAccount>();
         }
 
+        public virtual void AddBankAccount(BankAccount bankAccount)
+        {
+            BankAccounts.Add(bankAccount); 
+        }
+        public virtual void RemoveBankAccount(BankAccount bankAccount)
+        {
+            BankAccounts.Remove(bankAccount);
+        }
         public override string ToString()
         {
             return $"{FirstName};{LastName};{BirthDate.ToShortDateString()};{FiscalCode};{Gender}";

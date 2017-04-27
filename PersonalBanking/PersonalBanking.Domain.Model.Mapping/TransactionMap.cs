@@ -12,9 +12,10 @@ namespace PersonalBanking.Domain.Model.Mapping
         public TransactionMap()
         {
             Id(x => x.Id).GeneratedBy.Identity();
+            
+            References(x => x.Source).Not.Nullable();
+            References(x => x.Target).Not.Nullable();
 
-            Map(x => x.Source).Not.Nullable();
-            Map(x => x.Target).Not.Nullable();
             Map(x => x.Ammount).Not.Nullable();
             Map(x => x.CurrencyType).Not.Nullable();
             Map(x => x.Date).Not.Nullable();

@@ -23,5 +23,10 @@ namespace PersonalBanking.Domain.Model
             Date = DateTime.Now;
             CurrencyType = source.Currency;
         }
+
+        public Transaction()
+        {
+            
+        }
     }
 }

@@ -44,6 +44,8 @@
     <Compile Include="Account\CreditAccount.cs" />
     <Compile Include="Account\CurrentAccount.cs" />
     <Compile Include="Account\DepositAccount.cs" />
+    <Compile Include="Bill.cs" />
+    <Compile Include="Card.cs" />
     <Compile Include="EntityBase.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

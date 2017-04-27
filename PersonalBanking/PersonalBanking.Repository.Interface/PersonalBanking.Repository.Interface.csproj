@@ -40,7 +40,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IBankAccountRepository.cs" />
+    <Compile Include="IPersonRepository.cs" />
+    <Compile Include="IRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PersonalBanking.Domain.Model\PersonalBanking.Domain.Model.csproj">
+      <Project>{AC43B8FE-E977-4AF4-B004-D20F3D4AAE4C}</Project>
+      <Name>PersonalBanking.Domain.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
