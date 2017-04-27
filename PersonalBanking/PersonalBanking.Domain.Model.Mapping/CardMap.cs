@@ -18,10 +18,7 @@ namespace PersonalBanking.Domain.Model.Mapping
             Map(x => x.CardNumber).Not.Nullable();
             Map(x => x.ExpireDate).Not.Nullable();
 
-            References(x => x.CardBankAccount).Not.Nullable();
-
-
-            
+            References(x => x.CardBankAccount).Not.Nullable();  
         }
 
        

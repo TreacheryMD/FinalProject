@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="IBankAccountRepository.cs" />
     <Compile Include="IBillRepository.cs" />
+    <Compile Include="ICardRepository.cs" />
     <Compile Include="IPersonRepository.cs" />
     <Compile Include="IRepository.cs" />
     <Compile Include="ITransactionRepository.cs" />
