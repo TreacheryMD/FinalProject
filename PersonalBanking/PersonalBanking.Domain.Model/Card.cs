@@ -22,5 +22,14 @@ namespace PersonalBanking.Domain.Model
         {
 
         }
+
+        public Card(string cardType,int cvv,string cardNumber,BankAccount bankAccount,DateTime expireDate)
+        {
+            CardType = cardType;
+            Cvv = cvv;
+            CardNumber = cardNumber;
+            CardBankAccount = bankAccount;
+            ExpireDate = expireDate;
+        }
     }
 }

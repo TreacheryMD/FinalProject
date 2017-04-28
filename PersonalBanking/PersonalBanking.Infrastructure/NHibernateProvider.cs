@@ -14,7 +14,7 @@ namespace PersonalBanking.Infrastructure
 {
     public static class NHibernateProvider
     {
-        private const string ConnectionStringName = "PersonalBanking";
+        private const string ConnectionStringName = "PersonalBankingW";
 
         private static ISessionFactory _sessionFactory;
 
@@ -34,7 +34,7 @@ namespace PersonalBanking.Infrastructure
                     .ConnectionString(c => c.FromConnectionStringWithKey(ConnectionStringName)))
                 .Mappings(x => x.FluentMappings.AddFromAssembly(typeof(BankAccountMap).Assembly))
                 .ExposeConfiguration(cfg => new SchemaUpdate(cfg).Execute(false, true));
-           // .ExposeConfiguration(CreateSchema);
+            //.ExposeConfiguration(CreateSchema);
 
             return configuration.BuildSessionFactory();
         }

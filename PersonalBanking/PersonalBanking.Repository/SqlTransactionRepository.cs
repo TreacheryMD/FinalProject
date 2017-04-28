@@ -9,7 +9,7 @@ using PersonalBanking.Repository.Interface;
 
 namespace PersonalBanking.Repository
 {
-    class SqlTransactionRepository : Repository<Transaction>,ITransactionRepository
+    public class SqlTransactionRepository : Repository<Transaction>,ITransactionRepository
     {
         public SqlTransactionRepository(ISession session) : base(session)
         {

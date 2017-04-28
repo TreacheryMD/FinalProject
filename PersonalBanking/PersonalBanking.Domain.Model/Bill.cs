@@ -22,5 +22,13 @@ namespace PersonalBanking.Domain.Model
         {
 
         }
+        public Bill(decimal payAmmount,string serviceName,DateTime dateToPay,bool paidStatus,Person person)
+        {
+            PayAmmount = payAmmount;
+            ServiceName = serviceName;
+            DateToPay = dateToPay;
+            PaidStatus = paidStatus;
+            Person = person;
+        }
     }
 }

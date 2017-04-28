@@ -9,6 +9,8 @@ namespace PersonalBanking.Repository.Interface
 {
     public interface IPersonRepository :IRepository<Person>
     {
-        
+        IList<Person> GetByFirstName(string firstName);
+        IList<Person> GetByLastName(string lastName);
+        IList<Person> GetByFiscalCode(string fiscalCode);
     }
 }
