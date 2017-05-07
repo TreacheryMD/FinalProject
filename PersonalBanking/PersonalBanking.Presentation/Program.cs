@@ -17,7 +17,7 @@ namespace PersonalBanking.Presentation
     {
         static void Main(string[] args)
         {
-            IoC.RegisterAll();
+            //IoC.RegisterAll();
             var bankAccountRepo = IoC.Resolve<IBankAccountRepository>();
             var personRepository = IoC.Resolve<IPersonRepository>();
             var cardRepository = IoC.Resolve<ICardRepository>();
@@ -138,11 +138,6 @@ namespace PersonalBanking.Presentation
             var allTrans = new List<Transaction>() { tr1, tr2, tr3, tr4, tr5 };
 
             transactionRepository.Add(allTrans);
-
-
-
-
-
         }
     }
 }
