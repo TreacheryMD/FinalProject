@@ -15,6 +15,7 @@ namespace PersonalBanking.Domain.Model
         public virtual DateTime BirthDate { get; protected internal set; }
         public virtual string FiscalCode { get; protected internal set; }
         public virtual GenderType Gender { get; protected internal set; }
+
         //public virtual IList<BankAccount> BankAccounts { get; protected internal set; }
 
 

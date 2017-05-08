@@ -55,6 +55,7 @@
     <Compile Include="Repository.cs" />
     <Compile Include="SqlBankAccountRepository.cs" />
     <Compile Include="SqlTransactionRepository.cs" />
+    <Compile Include="SqlUserRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PersonalBanking.Domain.Model\PersonalBanking.Domain.Model.csproj">
