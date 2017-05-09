@@ -25,20 +25,13 @@ namespace PersonalBanking.PresentationMVC.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new UserViewModel();
-                user.Username = model.Username;
-                user.Person.FirstName = model.Person.FirstName;
-                user.Person.LastName = model.Person.LastName;
-                user.Person.BirthDate = model.Person.BirthDate;
-                user.Person.Gender = model.Person.Gender;
-                user.Person.FiscalCode = model.Person.FiscalCode;
-
-                user.Email = model.Email;
-                user.Password = model.Password;
-                user.ConfirmPassword = model.ConfirmPassword;
-                
+                return View("Thanks", model);
             }
-            return View(model);
+            else
+            {
+                // there is a validation error
+                return View();
+            }
         }
     }
 }
