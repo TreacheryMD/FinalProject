@@ -25,6 +25,7 @@ namespace PersonalBanking.PresentationMVC.Controllers
         {
             if (ModelState.IsValid)
             {
+
                 return View("Thanks", model);
             }
             else

@@ -9,6 +9,14 @@ namespace PersonalBanking.PresentationMVC.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly IBankAccountRepository _bankAccountRepository;
+
+        public HomeController(IBankAccountRepository bankAccountRepository)
+        {
+            _bankAccountRepository = bankAccountRepository;
+        }
+
+
         // GET: Home
         public ActionResult Index()
         {
@@ -17,7 +25,10 @@ namespace PersonalBanking.PresentationMVC.Controllers
 
         public ActionResult About()
         {
-            return View();
+
+            var bankacc = _bankAccountRepository.GetById(1);
+
+            return View(bankacc);
         }
     }
 }

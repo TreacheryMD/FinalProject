@@ -168,6 +168,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\ValidateDateRange.js" />
     <Content Include="Web.config" />
     <Content Include="Views\Home\About.cshtml" />
   </ItemGroup>
@@ -181,6 +182,7 @@
     <Compile Include="Models\PersonViewModel.cs" />
     <Compile Include="Models\UserViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Validation\ValidateDateRange.cs" />
     <Compile Include="Windsor Utils\ControllersInstaller.cs" />
     <Compile Include="Windsor Utils\WindsorControllerFactory.cs" />
   </ItemGroup>
@@ -203,6 +205,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="App_Code\" />
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
