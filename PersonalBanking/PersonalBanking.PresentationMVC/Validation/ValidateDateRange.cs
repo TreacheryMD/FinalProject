@@ -11,31 +11,25 @@ namespace PersonalBanking.PresentationMVC.Validation
     [AttributeUsage(AttributeTargets.Property)]
     public class ValidateDateRange : ValidationAttribute, IClientValidatable
     {
-        //public DateTime MinDate { get; set; }
-        //public DateTime MaxDate { get; set; }
+        public static DateTime MinDateTime = DateTime.Now.AddYears(-120);
+        public static DateTime MaxDateTime = DateTime.Now.AddYears(-18);
 
-        //public ValidateDateRange(DateTime minDateTime,DateTime maxDateTime)
-        //{
-        //    MinDate = minDateTime;
-        //    MaxDate = maxDateTime;
-        //}
-
-        private string _errMessage =
-            $"Date is not in given range {DateTime.Now.AddYears(-120)}-{DateTime.Now.AddYears(-18)}";
+        private readonly string _errMessage =
+            $"Date is not in given range {MinDateTime.ToShortDateString()}-{MaxDateTime.ToShortDateString()}";
 
         public IEnumerable<ModelClientValidationRule> GetClientValidationRules(ModelMetadata metadata, ControllerContext context)
         {
-            var mvr = new ModelClientValidationRule
+             var mvr = new ModelClientValidationRule
             {
-                ErrorMessage = _errMessage,
-                ValidationType = "ValidateDateRange"
+                ErrorMessage = "clientSide",
+                ValidationType = "validatedaterange"
             };
             return new[] { mvr };
         }
 
         protected override ValidationResult IsValid(object value, ValidationContext validationContext)
         {
-            if (Convert.ToDateTime(value) >= DateTime.Now.AddYears(-120) && Convert.ToDateTime(value) <= DateTime.Now.AddYears(-18))
+            if (Convert.ToDateTime(value) >= MinDateTime && Convert.ToDateTime(value) <= MaxDateTime)
             {
                 return ValidationResult.Success;
             }

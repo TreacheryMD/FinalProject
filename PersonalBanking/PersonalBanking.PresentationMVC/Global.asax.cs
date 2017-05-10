@@ -16,6 +16,9 @@ namespace PersonalBanking.PresentationMVC
 
         protected void Application_Start()
         {
+            HtmlHelper.ClientValidationEnabled = true;
+            HtmlHelper.UnobtrusiveJavaScriptEnabled = true;
+
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
 
