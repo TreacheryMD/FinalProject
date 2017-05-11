@@ -1,20 +1,22 @@
 ﻿$(function () {
-    $.validator.addMethod("validatedaterange",
+    var validatorName = "validatedaterange";
+    $.validator.addMethod(validatorName,
         function (value, element) {
             try {
-                if (($element).is('disabled'))
-                    return true;
-                if (($element).is('[data-val-validatedaterange]')) {
-                    var d = Date.parse($(element).val());
-                    //var minDate = "<%=MinDateTime%>";
-                    //var maxDate = "<%=MaxDateTime%>";
-                    return d >= new Date("2008-01-10") && d <= new Date("2009-01-10");
+                debugger;
+                if ($(element).is('[data-val-validatedaterange]')) {
+                    var from = $(element).val().split("-");
+                    var dateToCheck = new Date(from[2], from[1] - 1, from[0]);
+                    var date = new Date();
+                    var minDate = new Date(date.getFullYear() - 120, date.getMonth(), date.getDate());
+                    var maxDate = new Date(date.getFullYear() - 18, date.getMonth(), date.getDate());
+                    return dateToCheck >= minDate && dateToCheck <= maxDate;
                 }
+                return false;
             } catch (e) {
                 return false;
             }
         },
         "");
-    $.validator.unobtrusive.adapters.addBool("validateDateRange");
+    $.validator.unobtrusive.adapters.addBool(validatorName);
 }(jQuery));
-

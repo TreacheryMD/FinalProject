@@ -152,6 +152,7 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Images\banking.jpg" />
     <Content Include="Images\reg1.jpg" />
     <Content Include="Images\ebank.jpg" />
     <Content Include="Images\goldenCoins.jpg" />
@@ -180,6 +181,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Extension\ImageChanger.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

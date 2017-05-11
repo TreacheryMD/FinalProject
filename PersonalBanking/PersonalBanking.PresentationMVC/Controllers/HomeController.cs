@@ -20,14 +20,15 @@ namespace PersonalBanking.PresentationMVC.Controllers
         // GET: Home
         public ActionResult Index()
         {
+
             return View();
         }
 
         public ActionResult About()
         {
+            ViewBag.Name = "test";
 
             var bankacc = _bankAccountRepository.GetById(1);
-
             return View(bankacc);
         }
     }

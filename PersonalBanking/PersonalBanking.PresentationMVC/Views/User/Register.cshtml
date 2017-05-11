@@ -2,6 +2,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @using PersonalBanking.Domain.Model
+@using PersonalBanking.PresentationMVC.Extension
 @model PersonalBanking.PresentationMVC.Models.UserViewModel
 
     <div class="container" style="margin-top: 3%">
@@ -17,55 +18,55 @@
                         <div class="form-group">
                             @Html.LabelFor(m => m.Username, new { @class = "col-md-4 control-label" })
                             <div class="col-md-8">
-                                @Html.TextBoxFor(m => m.Username, new { @class = "form-control", placeholder = "Used for logging in", required = "required" })
+                                @Html.TextBoxFor(m => m.Username, new { @class = "form-control", placeholder = "Used for logging in" })
                             </div>
                         </div>
                         <div class="form-group">
                             @Html.LabelFor(m => m.Email, new { @class = "col-md-4 control-label" })
                             <div class="col-md-8">
-                                @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = "example@gmail.com" , required = "required" })
+                                @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = "example@gmail.com"  })
                             </div>
                         </div>
                         <div class="form-group">
                             @Html.LabelFor(m => m.Password, new { @class = "col-md-4 control-label" })
                             <div class="col-md-8">
-                                @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = "Your password" , required = "required" })
+                                @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = "Your password"  })
                             </div>
                         </div>
                         <div class="form-group">
                             @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-4 control-label" })
                             <div class="col-md-8">
-                                @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control", placeholder = "Repeat password", required = "required" })
+                                @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control", placeholder = "Repeat password" })
                             </div>
                         </div>
                         <div class="form-group">
                             @Html.LabelFor(m => m.Person.FirstName, new { @class = "col-md-4 control-label " })
                             <div class="col-md-8">
-                                @Html.TextBoxFor(m => m.Person.FirstName, new { @class = "form-control", placeholder = "First name" , required = "required" })
+                                @Html.TextBoxFor(m => m.Person.FirstName, new { @class = "form-control", placeholder = "First name" })
                             </div>
                         </div>
                         <div class="form-group">
                             @Html.LabelFor(m => m.Person.LastName, new { @class = "col-md-4 control-label" })
                             <div class="col-md-8">
-                                @Html.TextBoxFor(m => m.Person.LastName, new { @class = "form-control", placeholder = "Last name", required = "required" })
+                                @Html.TextBoxFor(m => m.Person.LastName, new { @class = "form-control", placeholder = "Last name" })
                             </div>
                         </div>
                         <div class="form-group">
                             @Html.LabelFor(m => m.Person.BirthDate, new { @class = "col-md-4 control-label" })
                             <div class="col-md-8">
-                                @Html.TextBoxFor(m => m.Person.BirthDate, new { @class = "form-control", type = "date", required = "required" })
+                                @Html.TextBoxFor(m => m.Person.BirthDate, new { @class = "form-control", type = "date" })
                             </div>
                         </div>
                         <div class="form-group">
                             @Html.LabelFor(m => m.Person.Gender, new { @class = "col-md-4 control-label" })
                             <div class="col-md-8">
-                                @Html.DropDownListFor(m => m.Person.Gender, EnumHelper.GetSelectList(typeof(GenderType)), new { @class = "form-control" , required = "required" })
+                                @Html.DropDownListFor(m => m.Person.Gender, EnumHelper.GetSelectList(typeof(GenderType)), new { @class = "form-control" })
                             </div>
                         </div>
                         <div class="form-group">
                             @Html.LabelFor(m => m.Person.FiscalCode, new { @class = "col-md-4 control-label" })
                             <div class="col-md-8">
-                                @Html.TextBoxFor(m => m.Person.FiscalCode, new { @class = "form-control", placeholder = "FiscalCode", required = "required" })
+                                @Html.TextBoxFor(m => m.Person.FiscalCode, new { @class = "form-control", placeholder = "FiscalCode" })
                             </div>
                         </div>
                         <div class="form-group">
@@ -75,9 +76,12 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <img class="img-responsive img-thumbnail" src="~/Images/reg1.jpg" width="400" />
-                        <div style="margin-top: 20px">
-                            @Html.ValidationSummary("", new { @class = "text-danger" })
+                        <div class="center-block text-center">
+                            @Html.CustomGreetingsOnTime()
+                            <img class="img-responsive img-thumbnail" src="~/Images/reg1.jpg" width="400"/>
+                        </div>
+                        <div style="margin-top: 20px; padding-left: 20%">
+                            @Html.ValidationSummary("", new {@class = "text-danger"})
                         </div>
 
                     </div>

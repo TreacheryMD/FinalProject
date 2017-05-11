@@ -19,10 +19,11 @@ namespace PersonalBanking.PresentationMVC.Models
         [Required]
         [Display(Name = "Birth date:")]
         [DataType(DataType.Date)]
-        [ValidateDateRange()]
+        [ValidateDateRange]
         public DateTime BirthDate { get; protected internal set; }
         [Display(Name = "Fiscal code:")]
         [Required]
+        [RegularExpression("^[0-9]*$", ErrorMessage = "Fiscal code: numbers only.")]
         public string FiscalCode { get; protected internal set; }
         [Display(Name = "Gender:")]
         [Required]
