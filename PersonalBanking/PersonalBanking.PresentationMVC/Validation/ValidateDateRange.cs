@@ -21,7 +21,7 @@ namespace PersonalBanking.PresentationMVC.Validation
         {
              var mvr = new ModelClientValidationRule
             {
-                ErrorMessage = "client side test eror",
+                ErrorMessage = _errMessage,
                 ValidationType = "validatedaterange"
             };
             return new[] { mvr };
