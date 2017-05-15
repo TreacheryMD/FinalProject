@@ -14,7 +14,7 @@ namespace PersonalBanking.Infrastructure
 {
     public static class NHibernateProvider
     {
-        private const string ConnectionStringName = "PersonalBankingH";
+        private const string ConnectionStringName = "PersonalBankingW";
 
         private static ISessionFactory _sessionFactory;
 

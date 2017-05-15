@@ -29,21 +29,21 @@ namespace PersonalBanking.PresentationMVC.Models
         public bool IsAdmin { get; set; }
         [Required]
         [Display(Name = "First name:")]
-        public string FirstName { get; protected internal set; }
+        public string FirstName { get; set; }
         [Required]
         [Display(Name = "Last name:")]
-        public string LastName { get; protected internal set; }
+        public string LastName { get;set; }
         [Required]
         [Display(Name = "Birth date:")]
         [DataType(DataType.Date)]
         [ValidateDateRange]
-        public DateTime BirthDate { get; protected internal set; }
+        public DateTime BirthDate { get;set; }
         [Display(Name = "Fiscal code:")]
         [Required]
         [RegularExpression("^[0-9]*$", ErrorMessage = "Fiscal code: numbers only.")]
-        public string FiscalCode { get; protected internal set; }
+        public string FiscalCode { get;  set; }
         [Display(Name = "Gender:")]
         [Required]
-        public GenderType Gender { get; protected internal set; }
+        public GenderType Gender { get;set; }
     }
 }

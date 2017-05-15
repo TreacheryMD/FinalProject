@@ -2,6 +2,8 @@
 using Castle.MicroKernel.Registration;
 using Castle.MicroKernel.SubSystems.Configuration;
 using Castle.Windsor;
+using AutoMapper;
+using PersonalBanking.BLL;
 
 namespace PersonalBanking.PresentationMVC.Windsor_Utils
 {
@@ -16,7 +18,11 @@ namespace PersonalBanking.PresentationMVC.Windsor_Utils
       /// <param name="store"></param>
       public void Install(IWindsorContainer container, IConfigurationStore store)
       {
-         container.Register(FindControllers().LifestyleSingleton());
+          var mapperConfig = new MapperConfiguration(config => { config.AddProfile<Mapping>();});
+          mapperConfig.AssertConfigurationIsValid();
+          container.Register(Component.For<IMapper>().Instance(mapperConfig.CreateMapper()).LifestyleSingleton());
+
+            container.Register(FindControllers().LifestyleTransient());
       }
 
       #endregion

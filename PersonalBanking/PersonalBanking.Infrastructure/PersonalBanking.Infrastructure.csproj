@@ -73,9 +73,17 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\PersonalBanking.BLL\PersonalBanking.BLL.csproj">
+      <Project>{26F4FE07-0EDF-4F34-8C73-AF1DBB1EB234}</Project>
+      <Name>PersonalBanking.BLL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\PersonalBanking.Domain.Model.Mapping\PersonalBanking.Domain.Model.Mapping.csproj">
       <Project>{56E5A0D0-BB5B-41E3-9063-3BB02B6D5E64}</Project>
       <Name>PersonalBanking.Domain.Model.Mapping</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PersonalBanking.Domain.Model\PersonalBanking.Domain.Model.csproj">
+      <Project>{AC43B8FE-E977-4AF4-B004-D20F3D4AAE4C}</Project>
+      <Name>PersonalBanking.Domain.Model</Name>
     </ProjectReference>
     <ProjectReference Include="..\PersonalBanking.Repository.Interface\PersonalBanking.Repository.Interface.csproj">
       <Project>{D0CBD424-FFB3-44F1-91D3-C879FD2FFCBE}</Project>

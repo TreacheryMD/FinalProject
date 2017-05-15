@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using NHibernate;
@@ -9,6 +10,10 @@ using PersonalBanking.Repository.Interface;
 using PersonalBanking.Repository;
 using Castle.MicroKernel;
 using Castle.MicroKernel.Registration;
+using PersonalBanking.BLL.Abstract;
+using PersonalBanking.BLL.DTO;
+using PersonalBanking.BLL.Services;
+using PersonalBanking.Domain.Model.Account;
 
 namespace PersonalBanking.Infrastructure
 {
@@ -34,6 +39,23 @@ namespace PersonalBanking.Infrastructure
             _kernel.Register(
                 Component.For(typeof(ITransactionRepository))
                     .ImplementedBy(typeof(SqlTransactionRepository)).LifestyleTransient());
+
+            _kernel.Register(
+                Component.For(typeof(IUserRepository))
+                    .ImplementedBy(typeof(SqlUserRepository)).LifestyleTransient());
+
+            //_kernel.Register(
+            //    Component.For(typeof(IRegisterService))
+            //        .ImplementedBy(typeof(RegisterService)).LifestyleTransient());
+
+            _kernel.Register(
+                Component.For(typeof(IRepository<>))
+                    .ImplementedBy(typeof(Repository<>)).LifestyleTransient());
+
+            _kernel.Register(
+                Component.For(typeof(IGenericService<UserDTO>))
+                    .ImplementedBy(typeof(GenericService<UserDTO, User>)).LifestyleTransient());
+
 
             _kernel.Register(Component.For<ISession>().UsingFactoryMethod(NHibernateProvider.GetSession).LifestyleTransient());
         }

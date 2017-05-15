@@ -19,7 +19,7 @@ namespace PersonalBanking.Domain.Model.Mapping
             Map(x => x.Email).Not.Nullable();
             Map(x => x.IsAdmin).Not.Nullable();
 
-            References(x => x.Person).Not.Nullable();
+            References(x => x.Person).Not.Nullable().Cascade.SaveUpdate();
 
         }
     }
