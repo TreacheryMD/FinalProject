@@ -13,7 +13,7 @@ namespace PersonalBanking.PresentationMVC.Controllers
         // GET: Register
         public ActionResult Register()
         {
-            var user = new UserViewModel();
+            var user = new CreateUserViewModel();
 
             return View();
         }
@@ -21,7 +21,7 @@ namespace PersonalBanking.PresentationMVC.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public ActionResult Register(UserViewModel model)
+        public ActionResult Register(CreateUserViewModel model)
         {
             if (ModelState.IsValid)
             {

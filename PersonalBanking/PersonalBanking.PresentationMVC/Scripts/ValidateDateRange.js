@@ -4,13 +4,13 @@
         function (value, element) {
             try {
                 debugger;
-                if ($(element).is('[data-val-validatedaterange]')) {
+                if ($(element).is("[data-val-validatedaterange]")) {
                     var from = $(element).val().split("-");
-                    var dateToCheck = new Date(from[2], from[1] - 1, from[0]);
+                    var dateToCheck = new Date(from[0], from[1], from[2]);
                     var date = new Date();
                     var minDate = new Date(date.getFullYear() - 120, date.getMonth(), date.getDate());
                     var maxDate = new Date(date.getFullYear() - 18, date.getMonth(), date.getDate());
-                    return dateToCheck >= minDate && dateToCheck <= maxDate;
+                    return (dateToCheck >= minDate && dateToCheck <= maxDate);
                 }
                 return false;
             } catch (e) {
