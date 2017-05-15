@@ -7,6 +7,8 @@
     <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    <link href="~/Content/leftSideNav.css" rel="stylesheet" />
+
     <style>
         .panel-footer.panel-custom {
             background-color: #222;
@@ -53,9 +55,21 @@
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
     </nav>
-    <div class="body-content">
+<div class="body-content">
+    
+    <div id="sideNav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#">@Html.ActionLink("Users", "Users", "Admin")</a>
+        <a href="#">Bank Accounts</a>
+        <a href="#">Card Accounts</a>
+        <a href="#">Transaction Log</a>
+    </div>
+    
+    <div id="main">
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Tools</span>
         @RenderBody()
     </div>
+</div>
     <div class="panel-footer panel-custom navbar-fixed-bottom text-center">
         <p>&copy; @DateTime.Now.Year - Personal Banking</p>
     </div>
@@ -68,5 +82,7 @@
     <script src="~/Scripts/jquery.validate.js"></script>
     <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
     <script src="~/Scripts/ValidateDateRange.js"></script>
+
+    <script src="~/Scripts/leftSideNavOpenClose.js"></script>
 </body>
 </html>

@@ -16,6 +16,14 @@ namespace PersonalBanking.BLL
         {
             CreateMap<PersonDTO, Person>().ReverseMap();
             CreateMap<UserDTO, User>().ReverseMap();
+            CreateMap<BillDTO, Bill>().ReverseMap();
+            //CreateMap<CardDTO, Card>().ReverseMap();
+            //CreateMap<CreditAccountDTO, CreditAccount>().ReverseMap();
+            //CreateMap<CurrentAccount, CurrentAccount>().ReverseMap();
+            //CreateMap<DepositAccount, DepositAccount>().ReverseMap();
+            //CreateMap<TransactionDTO, Transaction>().ReverseMap();
+
+            //CreateMap<BankAccountDTO, BankAccount>().ReverseMap();
 
         }
     }
