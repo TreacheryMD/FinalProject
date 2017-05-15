@@ -16,7 +16,7 @@ namespace PersonalBanking.PresentationMVC.Windsor_Utils
       /// <param name="store"></param>
       public void Install(IWindsorContainer container, IConfigurationStore store)
       {
-         container.Register(FindControllers().LifestyleTransient());
+         container.Register(FindControllers().LifestyleSingleton());
       }
 
       #endregion
