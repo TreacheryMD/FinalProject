@@ -18,7 +18,7 @@ namespace PersonalBanking.PresentationMVC.Windsor_Utils
       /// <param name="store"></param>
       public void Install(IWindsorContainer container, IConfigurationStore store)
       {
-          var mapperConfig = new MapperConfiguration(config => { config.AddProfile<Mapping>();});
+          var mapperConfig = new MapperConfiguration(config => { config.AddProfile<BLL.Mapping>();});
           mapperConfig.AssertConfigurationIsValid();
           container.Register(Component.For<IMapper>().Instance(mapperConfig.CreateMapper()).LifestyleSingleton());
 

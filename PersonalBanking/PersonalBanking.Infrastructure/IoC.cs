@@ -23,6 +23,17 @@ namespace PersonalBanking.Infrastructure
         public static void RegisterAll(IKernel kernel)
         {
             _kernel = kernel;
+
+            //_kernel.Register(Classes.FromAssembly(typeof(IBillRepository).Assembly)
+            //    .BasedOn<SqlBillRepository>()
+            //    .WithService.FromInterface()
+            //    .LifestylePerWebRequest());
+
+            //_kernel.Register(Classes.FromAssembly(typeof(IUserService).Assembly)
+            //    .BasedOn<UserService>()
+            //    .WithService.FromInterface()
+            //    .LifestylePerWebRequest());
+
             _kernel.Register(
                 Component.For(typeof(IBillRepository))
                     .ImplementedBy(typeof(SqlBillRepository)).LifestyleTransient());
@@ -44,10 +55,7 @@ namespace PersonalBanking.Infrastructure
                 Component.For(typeof(IUserRepository))
                     .ImplementedBy(typeof(SqlUserRepository)).LifestyleTransient());
 
-            //_kernel.Register(
-            //    Component.For(typeof(IRegisterService))
-            //        .ImplementedBy(typeof(RegisterService)).LifestyleTransient());
-
+         
             _kernel.Register(
                 Component.For(typeof(IRepository<>))
                     .ImplementedBy(typeof(Repository<>)).LifestyleTransient());
@@ -55,6 +63,10 @@ namespace PersonalBanking.Infrastructure
             _kernel.Register(
                 Component.For(typeof(IGenericService<UserDTO>))
                     .ImplementedBy(typeof(GenericService<UserDTO, User>)).LifestyleTransient());
+
+            _kernel.Register(
+                Component.For(typeof(IUserService))
+                    .ImplementedBy(typeof(UserService)).LifestyleTransient());
 
 
             _kernel.Register(Component.For<ISession>().UsingFactoryMethod(NHibernateProvider.GetSession).LifestyleTransient());

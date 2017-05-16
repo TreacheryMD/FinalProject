@@ -9,10 +9,11 @@ namespace PersonalBanking.BLL.DTO
 {
     public class UserDTO : EntityBaseDTO
     {
-        public virtual string Username { get; set; }
-        public virtual string Password { get; set; }
-        public virtual string Email { get; set; }
-        public virtual bool IsAdmin { get; set; }
-        public virtual PersonDTO Person { get; set; }
+        public int Id{ get; set; }
+        public string Username { get; set; }
+        public string Password { get; set; }
+        public string Email { get; set; }
+        public bool IsAdmin { get; set; }
+        public PersonDTO Person { get; set; }
     }
 }

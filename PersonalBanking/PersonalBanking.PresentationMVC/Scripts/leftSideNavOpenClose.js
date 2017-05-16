@@ -1,7 +1,7 @@
 ﻿
     function openNav() {
-        document.getElementById("sideNav").style.width = "250px";
-        document.getElementById("main").style.marginLeft = "250px";
+        document.getElementById("sideNav").style.width = "220px";
+        document.getElementById("main").style.marginLeft = "220px";
     }
 
 function closeNav() {

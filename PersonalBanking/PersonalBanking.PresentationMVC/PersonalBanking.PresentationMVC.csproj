@@ -192,7 +192,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Mapping\PresentationMapping.cs" />
     <Compile Include="Models\CreateUserViewModel.cs" />
+    <Compile Include="Models\UserViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Validation\ValidateDateRange.cs" />
     <Compile Include="Windsor Utils\ControllersInstaller.cs" />
