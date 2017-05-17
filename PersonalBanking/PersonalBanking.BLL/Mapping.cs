@@ -17,7 +17,8 @@ namespace PersonalBanking.BLL
         public Mapping()
         {
             CreateMap<PersonDTO, Person>().ReverseMap();
-            CreateMap<UserDTO, User>().ReverseMap();
+            CreateMap<User, UserDTO>();
+            CreateMap<UserDTO, User>().ForMember(data=>data.Person, opt=>opt.Ignore());
             CreateMap<BillDTO, Bill>().ReverseMap();
             CreateMap<CardDTO, Card>().ReverseMap();
             CreateMap<CreditAccountDTO, CreditAccount>().ReverseMap();

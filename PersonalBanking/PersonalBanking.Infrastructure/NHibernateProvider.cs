@@ -12,13 +12,18 @@ using PersonalBanking.Domain.Model.Mapping;
 
 namespace PersonalBanking.Infrastructure
 {
-    public static class NHibernateProvider
+    public class NHibernateProvider
     {
-        private const string ConnectionStringName = "PersonalBankingH";
+        private string _connectionString;
 
-        private static ISessionFactory _sessionFactory;
+        public NHibernateProvider(string connectionString)
+        {
+            _connectionString = connectionString;
+        }
 
-        public static ISession GetSession()
+        private ISessionFactory _sessionFactory;
+
+        public ISession GetSession()
         {
             if (_sessionFactory == null)
             {
@@ -27,11 +32,11 @@ namespace PersonalBanking.Infrastructure
             return _sessionFactory.OpenSession();
         }
 
-        private static ISessionFactory CreateSessionFactory()
+        public ISessionFactory CreateSessionFactory()
         {
             var configuration = Fluently.Configure()
                 .Database(MsSqlConfiguration.MsSql2012
-                    .ConnectionString(c => c.FromConnectionStringWithKey(ConnectionStringName)))
+                    .ConnectionString(c => c.FromConnectionStringWithKey(_connectionString)))
                 .Mappings(x => x.FluentMappings.AddFromAssembly(typeof(BankAccountMap).Assembly))
                 .ExposeConfiguration(cfg => new SchemaUpdate(cfg).Execute(false, true));
             //.ExposeConfiguration(CreateSchema);
@@ -39,7 +44,7 @@ namespace PersonalBanking.Infrastructure
             return configuration.BuildSessionFactory();
         }
 
-        private static void CreateSchema(Configuration cfg)
+        private void CreateSchema(Configuration cfg)
         {
             var schemaExport = new SchemaExport(cfg);
             schemaExport.Drop(false, true);

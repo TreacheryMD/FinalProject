@@ -9,36 +9,9 @@
 <h2>Users</h2>
 
 <div>
-    <h4>UserViewModel</h4>
+    <h4>Users</h4>
     <hr />
-    @*<dl class="dl-horizontal">
-
-            <dt>
-                @Html.DisplayNameFor(model => model.Username)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Username)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.Email)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Email)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.IsAdmin)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.IsAdmin)
-            </dd>
-
-        </dl>*@
-    <table>
+    <table class="table table-striped">
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.Username)
@@ -68,7 +41,7 @@
                 <td>
                     <p>
                         @Html.ActionLink("Edit", "EditUser", new { userId = item.Id }) |
-                        @Html.ActionLink("Back to List", "Index")
+                        @Html.ActionLink("Delete", "DeleteUser", new {userId = item.Id})
                     </p>
                 </td>
             </tr>

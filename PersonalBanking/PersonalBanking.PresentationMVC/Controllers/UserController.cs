@@ -16,10 +16,11 @@ namespace PersonalBanking.PresentationMVC.Controllers
 {
     public class UserController : Controller
     {
-        private readonly IGenericService<UserDTO> _registerService;
-        public UserController(IGenericService<UserDTO> registerService)
+        private readonly IUserService _userService;
+
+        public UserController(IUserService userService)
         {
-            _registerService = registerService;
+            _userService = userService;
         }
         // GET: Register
         public ActionResult Register()
@@ -44,17 +45,17 @@ namespace PersonalBanking.PresentationMVC.Controllers
                     Gender = model.Gender,
                     LastName = model.LastName
                 };
-
+                
                 var user = new UserDTO()
                 {
                     Username = model.Username,
                     Email = model.Email,
                     Password = model.Password,
                     IsAdmin = false,
-                    Person = pers
+                   // Person = pers
                 };
 
-                _registerService.Add(user);
+                _userService.Add(user, pers);
                 return View("Thanks", model);
             }
             else

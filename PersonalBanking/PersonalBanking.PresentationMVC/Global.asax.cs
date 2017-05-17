@@ -18,9 +18,10 @@ namespace PersonalBanking.PresentationMVC
 
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
-
             var container = new WindsorContainer().Install(FromAssembly.This());
-            IoC.RegisterAll(container.Kernel);
+            var ioc = new IoC("PersonalBankingW");
+            ioc.RegisterAll(container.Kernel);
+            ControllerBuilder.Current.SetControllerFactory(new WindsorControllerFactory(container.Kernel));
 
             ControllerBuilder.Current.SetControllerFactory(new WindsorControllerFactory(container.Kernel));
 

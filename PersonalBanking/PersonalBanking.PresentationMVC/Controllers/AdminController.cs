@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
 using PersonalBanking.BLL.Abstract;
+using PersonalBanking.BLL.DTO;
 using PersonalBanking.PresentationMVC.Models;
 using PersonalBanking.Repository.Interface;
 
@@ -12,8 +13,8 @@ namespace PersonalBanking.PresentationMVC.Controllers
 {
     public class AdminController : Controller
     {
-        private readonly IUserRepository _userRepository;
-        private readonly IBankAccountRepository _bankAccountRepository;
+        //private readonly IUserRepository _userRepository;
+        //private readonly IBankAccountRepository _bankAccountRepository;
         private readonly IUserService _userService; 
 
 
@@ -40,18 +41,39 @@ namespace PersonalBanking.PresentationMVC.Controllers
 
             return View(userViewModels);
         }
-
+        
         public ActionResult EditUser(int userId)
         {
-            var allUsers = _userService.GetUserDtos();
-            return null;
+            var user = _userService.GetUserById(userId);
+            var userView = new UserViewModel();
+            return View(AutoMapper.Mapper.Map(user, userView));
         }
-
-        public ActionResult BankAccounts()
+        [HttpPost]
+        public ActionResult EditUser(UserViewModel userView)
         {
-           var allBankAccounts =  _bankAccountRepository.GetAll();
-
-           return View(allBankAccounts);
+            var user = new UserDTO();
+            user = AutoMapper.Mapper.Map(userView, user);
+            _userService.Save(user);
+            return View();
         }
+
+        public ActionResult DeleteUser(int userId)
+        {
+            var user = _userService.GetUserById(userId);
+            var userView = new UserViewModel();
+            AutoMapper.Mapper.Map(user, userView);
+            return View(userView);
+        }
+
+        [HttpPost]
+        public ActionResult DeleteUser(UserDTO userDTO)
+        {
+            _userService.Delete(userDTO);
+            return RedirectToAction("Users");
+        }
+
+
+
+
     }
 }

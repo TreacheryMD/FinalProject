@@ -4,12 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using PersonalBanking.BLL.DTO;
+using PersonalBanking.Domain.Model.Account;
 
 namespace PersonalBanking.BLL.Abstract
 {
     public interface IUserService
     {
         IList<UserDTO> GetUserDtos();
-        //UserDTO GetUserDetailsByID(int userId);
+        UserDTO GetUserById(int userId);
+        void Save(UserDTO userDTO);
+        void Delete(UserDTO userDTO);
+        void Add(UserDTO user, PersonDTO person);
     }
 }

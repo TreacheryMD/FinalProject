@@ -8,7 +8,7 @@ namespace PersonalBanking.PresentationMVC.Mapping
     {
         public PresentationMapping()
         {
-            CreateMap<UserDTO, UserViewModel>();
+            CreateMap<UserDTO, UserViewModel>().ReverseMap();
         }
     }
 }

@@ -10,5 +10,6 @@ namespace PersonalBanking.Repository.Interface
     public interface IUserRepository : IRepository<User>
     {
         IList<User> GetUserByPersonId(int personId);
+
     }
 }

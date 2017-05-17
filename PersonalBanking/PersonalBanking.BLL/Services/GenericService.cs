@@ -25,7 +25,7 @@ namespace PersonalBanking.BLL.Services
 
         public void Add(TDTOModel entityBase)
         {
-            _genericRepository.Add(_mapper.Map<TDTOModel, TDomainModel>(entityBase));
+            _genericRepository.SaveOrUpdate(_mapper.Map<TDTOModel, TDomainModel>(entityBase));
         }
 
         public void Delete(TDTOModel entityBase)

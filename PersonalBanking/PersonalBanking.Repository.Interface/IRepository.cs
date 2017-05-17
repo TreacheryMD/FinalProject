@@ -9,7 +9,7 @@ namespace PersonalBanking.Repository.Interface
 {
     public interface IRepository<T> where T : EntityBase
     {
-        void Add(T entity);
+        void SaveOrUpdate(T entity);
         void Add(List<T> lEntity);
         void Delete(T entity); 
         T GetById(int id); 

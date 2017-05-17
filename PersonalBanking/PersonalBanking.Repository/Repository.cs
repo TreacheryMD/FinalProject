@@ -20,33 +20,28 @@ namespace PersonalBanking.Repository
 
         public void Add(List<T> lEntity)
         {
-            using (ITransaction transaction = Session.BeginTransaction())
-            {
+            
                 foreach (var entity in lEntity)
                 {
                     Session.SaveOrUpdate(entity);
                 }
-                transaction.Commit();
-            }
+              
+            
         }
 
-        public void Add(T entity)
+        public void SaveOrUpdate(T entity)
         {
-            using (ITransaction transaction = Session.BeginTransaction())
-            {
+            
                 Session.SaveOrUpdate(entity);
-                transaction.Commit();
-            }
+               
         }
 
         public void Delete(T entity)
         {
-            Session.Delete(entity);
-            using (ITransaction transaction = Session.BeginTransaction())
-            {
-                Session.SaveOrUpdate(entity);
-                transaction.Commit();
-            }
+         
+               
+                Session.Delete(entity);
+ 
         }
 
         public List<T> GetAll()
