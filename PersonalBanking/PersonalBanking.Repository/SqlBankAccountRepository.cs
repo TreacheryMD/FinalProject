@@ -19,5 +19,6 @@ namespace PersonalBanking.Repository
         {
             return Session.QueryOver<BankAccount>().Where(w => w.AccNum == accNumber).List();
         }
+
     }
 }

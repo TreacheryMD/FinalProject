@@ -80,6 +80,10 @@ namespace PersonalBanking.Infrastructure
                 Component.For(typeof(IUserService))
                     .ImplementedBy(typeof(UserService)).LifestylePerWebRequest());
 
+            _kernel.Register(
+                Component.For(typeof(IBankAccountService))
+                    .ImplementedBy(typeof(BankAccountService)).LifestylePerWebRequest());
+
 
             //_kernel.Register(Component.For<ISession>().UsingFactoryMethod(NHibernateProvider.GetSession).LifestylePerWebRequest());
 

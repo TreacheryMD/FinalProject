@@ -11,14 +11,14 @@ using PersonalBanking.Repository.Interface;
 
 namespace PersonalBanking.PresentationMVC.Controllers
 {
-    public class AdminController : Controller
+    public class AdminUserController : Controller
     {
         //private readonly IUserRepository _userRepository;
         //private readonly IBankAccountRepository _bankAccountRepository;
         private readonly IUserService _userService; 
 
 
-        public AdminController(IUserService userService)
+        public AdminUserController(IUserService userService)
         {
             _userService = userService;
 

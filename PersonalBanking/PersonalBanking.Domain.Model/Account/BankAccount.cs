@@ -17,7 +17,7 @@ namespace PersonalBanking.Domain.Model.Account
 
     public abstract class BankAccount : EntityBase
     {
-        public virtual string AccNum { get; protected set; }
+        public virtual string AccNum { get; set; }
         public virtual decimal Balance { get; protected set; }
         public virtual DateTime OpenDate { get; }
         public virtual CurrencyTypes Currency { get; }

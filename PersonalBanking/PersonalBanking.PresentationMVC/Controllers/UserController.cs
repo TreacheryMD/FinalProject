@@ -56,7 +56,7 @@ namespace PersonalBanking.PresentationMVC.Controllers
                 };
 
                 _userService.Add(user, pers);
-                return View("Thanks", model);
+                return View("Login", model);
             }
             else
             {
