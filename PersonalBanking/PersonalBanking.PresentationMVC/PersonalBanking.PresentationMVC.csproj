@@ -196,6 +196,7 @@
     <Compile Include="Mapping\PresentationMapping.cs" />
     <Compile Include="Models\BankAccountViewModel.cs" />
     <Compile Include="Models\CreateUserViewModel.cs" />
+    <Compile Include="Models\LoginViewModel.cs" />
     <Compile Include="Models\UserViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Validation\ValidateDateRange.cs" />

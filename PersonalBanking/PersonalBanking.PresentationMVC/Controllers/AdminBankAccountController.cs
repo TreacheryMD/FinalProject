@@ -15,13 +15,13 @@ namespace PersonalBanking.PresentationMVC.Controllers
 
         public AdminBankAccountController(IBankAccountService bankAccountService)
         {
-            _bankAccountService = bankAccountService;
+           // _bankAccountService = bankAccountService;
         }
 
         // GET: AdminBankAccount
         public ActionResult BankAccount()
         {
-            var bankAccountsDto = _bankAccountService.GetBankAccountDtos();
+          //  var bankAccountsDto = _bankAccountService.GetBankAccountDtos();
             return View();
         }
     }
