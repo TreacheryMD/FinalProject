@@ -19,5 +19,14 @@ namespace PersonalBanking.Repository
         {
             return Session.QueryOver<User>().Where(w => w.Person.Id == personId).List();
         }
+
+        public string[] CheckUser(string userName, string password)
+        {
+
+            var result = Session.QueryOver<User>().Where(w => w.Username == userName && w.Password == password).SingleOrDefault();
+            if (result == null) return new string[] {"0"};
+            return new string[]{"1",result.Id.ToString(), result.IsAdmin.ToString()};
+        }
+
     }
 }

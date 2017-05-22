@@ -62,6 +62,11 @@ namespace PersonalBanking.BLL.Services
             _userRepository.SaveOrUpdate(user);
             _transaction.Commit();
         }
+
+        public string[] CheckUser(string userName, string password)
+        {
+           return _userRepository.CheckUser(userName, password);
+        }   
     }
 }
 

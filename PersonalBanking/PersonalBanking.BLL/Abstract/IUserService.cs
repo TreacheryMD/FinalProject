@@ -15,5 +15,8 @@ namespace PersonalBanking.BLL.Abstract
         void Save(UserDTO userDTO);
         void Delete(UserDTO userDTO);
         void Add(UserDTO user, PersonDTO person);
+        string[] CheckUser(string userName, string password);
+        
+
     }
 }

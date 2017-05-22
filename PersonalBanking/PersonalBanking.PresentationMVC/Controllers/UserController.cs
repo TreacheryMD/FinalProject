@@ -72,6 +72,34 @@ namespace PersonalBanking.PresentationMVC.Controllers
             return View();
         }
 
+        [HttpPost]
+        public ActionResult Authorize(LoginViewModel loginViewModel)
+        {
+            string[] userDetails = _userService.CheckUser(loginViewModel.Username, loginViewModel.Password);
+            if (userDetails[0] == "0")
+            {
+                loginViewModel.ErrorMessage = "Wrong username or password, please check and try again.";
+                return View("Login", loginViewModel);
+            }
+            Session["UserId"] = userDetails[1];
+            Session["Username"] = loginViewModel.Username;
 
+            if (userDetails[2]=="True")
+            {
+                return RedirectToAction("Index", "AdminUser");
+            }
+            return RedirectToAction("Banking");
+        }
+
+        public string Banking()
+        {
+            return "user banking will be here";
+        }
+
+        public ActionResult LogOut()
+        {
+            Session.Abandon();
+            return RedirectToAction("Index", "Home");
+        }
     }
 }

@@ -5,17 +5,17 @@
 @model PersonalBanking.PresentationMVC.Models.LoginViewModel
 
 <div style="margin-top: 3%">
-    @using (Html.BeginForm("Register", "User", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+    @using (Html.BeginForm("Authorize", "User", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
     {
         @Html.AntiForgeryToken()
-        <div class="panel panel-primary" style="border-color: #222;background-color: aliceblue;">
+        <div class="panel panel-primary" style="border-color: #222;background-color: aliceblue;padding-bottom: 10%">
             <div class="panel-heading text-center" style="background-color: #222"><Span style="color:white">Login</Span></div>
             <hr />
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-6" style="margin-top: 8%">
                     <div class="form-group">
                         @Html.LabelFor(m => m.Username, new { @class = "col-md-4 control-label" })
-                        <div class="col-md-8" style="margin-top:3%">
+                        <div class="col-md-8">
                             @Html.TextBoxFor(m => m.Username, new { @class = "form-control", placeholder = "Used for logging in" })
                         </div>
                     </div>
@@ -29,9 +29,11 @@
                         <div class="col-md-offset-4 col-md-4">
                             <input type="submit" class="btn btn-default" value="Login" />
                         </div>
-                        
+                    </div>
+                    <div>
                         <div style="margin-top: 20px; padding-left: 20%">
                             @Html.ValidationSummary("", new {@class = "text-danger"})
+                            <label class="field-validation-error text-danger"> @Html.DisplayFor(model=> model.ErrorMessage)</label>
                         </div>
                     </div>
                 </div>
