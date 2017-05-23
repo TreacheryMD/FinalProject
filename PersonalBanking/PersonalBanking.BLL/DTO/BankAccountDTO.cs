@@ -9,14 +9,10 @@ namespace PersonalBanking.BLL.DTO
 {
     public class BankAccountDTO : EntityBaseDTO
     {
-        public string AccNum { get;  set; }
-        public decimal Balance { get;  set; }
+        public string AccNum { get; set; }
+        public decimal Balance { get; set; }
         public DateTime OpenDate { get; set; }
         public CurrencyTypes Currency { get; set; }
-        public DateTime Reimbursement { get; set; }
-        public double Rate { get; set; }
-        public bool Restricted { get; set; }
-        public double DepIntRate { get; set; }
-        public string PersonFiscalCode { get; set; }
+        public PersonDTO Person { get; set; }
     }
 }

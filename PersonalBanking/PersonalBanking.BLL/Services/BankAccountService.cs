@@ -24,26 +24,35 @@ namespace PersonalBanking.BLL.Services
 
         public IList<BankAccountDTO> GetBankAccountDtos()
         {
-            //var bankAccounts = _bankAccountRepository.GetAll();
-            //var bankAccountsDto = AutoMapper.Mapper.Map<IList<BankAccount>, IList<BankAccountDTO>>(bankAccounts);
+            var bankAccounts = _bankAccountRepository.GetAll();
+            var bankAccountsDto = AutoMapper.Mapper.Map<IList<BankAccount>, IList<BankAccountDTO>>(bankAccounts);
 
-            //return bankAccountsDto;
-            throw new NotImplementedException();
+            return bankAccountsDto;
         }
 
         public BankAccountDTO GetBankAccounDtoById(int bankAccountId)
         {
-            throw new NotImplementedException();
+            var bankAccount = _bankAccountRepository.GetById(bankAccountId);
+            var bankAccoutDto = AutoMapper.Mapper.Map<BankAccount, BankAccountDTO>(bankAccount);
+
+            return bankAccoutDto;
         }
 
         public void Save(BankAccountDTO bankAccountDto)
         {
-            throw new NotImplementedException();
+            var bankAccount = _bankAccountRepository.GetById(bankAccountDto.Id);
+            AutoMapper.Mapper.Map(bankAccountDto, bankAccount);
+
+            _bankAccountRepository.SaveOrUpdate(bankAccount);
+            _transaction.Commit();
+
         }
 
-        public void Delete(BankAccountDTO bankAccountDto)
+        public void Delete(int bankAccountId)
         {
-            throw new NotImplementedException();
+            var bankAccount =  _bankAccountRepository.GetById(bankAccountId);
+            _bankAccountRepository.Delete(bankAccount);
+            _transaction.Commit();
         }
 
         public void Add(BankAccountDTO bankAccountDto)

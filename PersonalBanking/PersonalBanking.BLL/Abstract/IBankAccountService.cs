@@ -12,7 +12,7 @@ namespace PersonalBanking.BLL.Abstract
         IList<BankAccountDTO> GetBankAccountDtos();
         BankAccountDTO GetBankAccounDtoById(int bankAccountId);
         void Save(BankAccountDTO bankAccountDto);
-        void Delete(BankAccountDTO bankAccountDto);
+        void Delete(int bankAccountId);
         void Add(BankAccountDTO bankAccountDto);    
 
     }

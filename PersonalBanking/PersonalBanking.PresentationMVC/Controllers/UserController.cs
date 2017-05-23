@@ -56,7 +56,7 @@ namespace PersonalBanking.PresentationMVC.Controllers
                 };
 
                 _userService.Add(user, pers);
-                return View("Login", model);
+                return View("Login");
             }
             else
             {
@@ -72,6 +72,7 @@ namespace PersonalBanking.PresentationMVC.Controllers
             return View();
         }
 
+        [ValidateAntiForgeryToken]
         [HttpPost]
         public ActionResult Authorize(LoginViewModel loginViewModel)
         {
@@ -83,6 +84,7 @@ namespace PersonalBanking.PresentationMVC.Controllers
             }
             Session["UserId"] = userDetails[1];
             Session["Username"] = loginViewModel.Username;
+            Session["IsAdmin"] = userDetails[2];
 
             if (userDetails[2]=="True")
             {

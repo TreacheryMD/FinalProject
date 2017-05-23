@@ -13,6 +13,6 @@ namespace PersonalBanking.Repository.Interface
         void Add(List<T> lEntity);
         void Delete(T entity); 
         T GetById(int id); 
-        List<T> GetAll();
+        IList<T> GetAll();
     }
 }

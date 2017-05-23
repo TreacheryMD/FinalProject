@@ -48,6 +48,7 @@ namespace PersonalBanking.PresentationMVC.Controllers
             var userView = new UserViewModel();
             return View(AutoMapper.Mapper.Map(user, userView));
         }
+        [ValidateAntiForgeryToken]
         [HttpPost]
         public ActionResult EditUser(UserViewModel userView)
         {
@@ -65,6 +66,7 @@ namespace PersonalBanking.PresentationMVC.Controllers
             return View(userView);
         }
 
+        [ValidateAntiForgeryToken]
         [HttpPost]
         public ActionResult DeleteUser(UserDTO userDTO)
         {

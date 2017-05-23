@@ -59,6 +59,9 @@
     <Compile Include="DTO\BankAccountDTO.cs" />
     <Compile Include="DTO\BillDTO.cs" />
     <Compile Include="DTO\CardDTO.cs" />
+    <Compile Include="DTO\CreditAccountDTO.cs" />
+    <Compile Include="DTO\CurrentAccountDTO.cs" />
+    <Compile Include="DTO\DepositAccountDTO.cs" />
     <Compile Include="DTO\EntityBaseDTO.cs" />
     <Compile Include="DTO\PersonDTO.cs" />
     <Compile Include="DTO\TransactionDTO.cs" />

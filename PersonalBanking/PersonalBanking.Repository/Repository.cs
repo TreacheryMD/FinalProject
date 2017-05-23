@@ -44,9 +44,9 @@ namespace PersonalBanking.Repository
  
         }
 
-        public List<T> GetAll()
+        public IList<T> GetAll()
         {
-            return Session.QueryOver<T>().List().ToList();
+            return Session.QueryOver<T>().List();
         }
 
         public T GetById(int id)

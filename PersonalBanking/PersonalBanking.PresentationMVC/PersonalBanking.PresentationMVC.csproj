@@ -196,6 +196,7 @@
     <Compile Include="Mapping\PresentationMapping.cs" />
     <Compile Include="Models\BankAccountViewModel.cs" />
     <Compile Include="Models\CreateUserViewModel.cs" />
+    <Compile Include="Models\CurrentAccountViewModel.cs" />
     <Compile Include="Models\LoginViewModel.cs" />
     <Compile Include="Models\UserViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -220,6 +221,8 @@
     <Content Include="Views\AdminUser\DeleteUser.cshtml" />
     <Content Include="Views\User\Login.cshtml" />
     <Content Include="Views\AdminBankAccount\BankAccount.cshtml" />
+    <Content Include="Views\AdminBankAccount\DeleteBankAccount.cshtml" />
+    <Content Include="Views\AdminBankAccount\EditBankAccount.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

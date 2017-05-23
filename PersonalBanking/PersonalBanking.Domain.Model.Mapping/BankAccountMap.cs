@@ -21,7 +21,8 @@ namespace PersonalBanking.Domain.Model.Mapping
             Map(x => x.OpenDate).Not.Nullable();
             Map(x => x.Currency).Not.Nullable();
 
-            References(x => x.Person).Not.Nullable();//.Column("Id").ForeignKey("BankAccount_Person_Id").Not.Nullable();
+            References(x => x.Person).Not.Nullable().LazyLoad();//.Column("Id").ForeignKey("BankAccount_Person_Id").Not.Nullable();
+
 
         }
     }
