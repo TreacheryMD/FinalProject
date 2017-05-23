@@ -44,37 +44,19 @@ namespace PersonalBanking.PresentationMVC.Mapping
         public BankAccountDTO Convert(BankAccountViewModel source, BankAccountDTO destination, ResolutionContext context)
         {
             BankAccountDTO dtoResult = null;
-            if (source.AccNum.Substring(source.AccNum.Length - 4).Contains("CR"))
+            if (source.AccNum.Substring(source.AccNum.Length - 2).Contains("CR"))
             {
                 var vSource = new CurrentAccountViewModel() {AccNum = source.AccNum,Balance = source.Balance,Currency = source.Currency,Id = source.Id,OpenDate = source.OpenDate,Restricted = source.Restricted};
                 //var vSource = source as CurrentAccountViewModel;
                 dtoResult = Mapper.Map<CurrentAccountViewModel, CurrentAccountDTO>(vSource);
             }
-            //else if (tViewModel is SecondViewModelImpl)
-            //{
-            //    var vSource = tViewModel as SecondViewModelImpl;
-            //    dtoResult = Mapper.Map<SecondViewModelImpl, SecondDtoImpl>(vSource);
-            //}
+            if (source.AccNum.Contains("CRED"))
+            {
+                var vSource = new () { AccNum = source.AccNum, Balance = source.Balance, Currency = source.Currency, Id = source.Id, OpenDate = source.OpenDate, Restricted = source.Restricted };
+                //var vSource = source as CurrentAccountViewModel;
+                dtoResult = Mapper.Map<CurrentAccountViewModel, CurrentAccountDTO>(vSource);
+            }
             return dtoResult;
         }
     }
 }
-
-
-
-//protected override BaseDto ConvertCore(BaseViewModel tViewModel)
-//{
-//BaseDto vResult = null;
-//    if (tViewModel is FirstViewModelImpl)
-//{
-//    var vSource = tViewModel as FirstViewModelImpl;
-//    vResult = Mapper.Map<FirstViewModelImpl, FirstDtoImpl>(vSource);
-//}
-//else if (tViewModel is SecondViewModelImpl)
-//{
-//var vSource = tViewModel as SecondViewModelImpl;
-//vResult = Mapper.Map<SecondViewModelImpl, SecondDtoImpl>(vSource);
-//}
-//return vResult;
-//}
-//}
