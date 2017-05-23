@@ -196,7 +196,9 @@
     <Compile Include="Mapping\PresentationMapping.cs" />
     <Compile Include="Models\BankAccountViewModel.cs" />
     <Compile Include="Models\CreateUserViewModel.cs" />
+    <Compile Include="Models\CreditAccountViewModel.cs" />
     <Compile Include="Models\CurrentAccountViewModel.cs" />
+    <Compile Include="Models\DepositAccountViewModel.cs" />
     <Compile Include="Models\LoginViewModel.cs" />
     <Compile Include="Models\UserViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
