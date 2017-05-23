@@ -41,8 +41,7 @@ namespace PersonalBanking.BLL.Services
         public void Save(BankAccountDTO bankAccountDto)
         {
             var bankAccount = _bankAccountRepository.GetById(bankAccountDto.Id);
-            AutoMapper.Mapper.Map(bankAccountDto, bankAccount);
-
+                       
             _bankAccountRepository.SaveOrUpdate(bankAccount);
             _transaction.Commit();
 

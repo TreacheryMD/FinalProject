@@ -8,9 +8,9 @@ namespace PersonalBanking.Domain.Model.Account
 {
     public class CreditAccount : BankAccount
     {
-        public virtual DateTime Reimbursement { get; }
+        public virtual DateTime Reimbursement { get; set; }
 
-        public virtual double Rate { get; }
+        public virtual double Rate { get; set; }
 
         public CreditAccount(Person person, string accNum, decimal newCreditAmmout, DateTime openDate, CurrencyTypes currency, DateTime reimbursementDate, double rate) :
             base(person, newCreditAmmout, accNum + "CRED", openDate, currency)

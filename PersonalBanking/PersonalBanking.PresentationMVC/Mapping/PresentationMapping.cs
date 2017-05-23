@@ -36,6 +36,8 @@ namespace PersonalBanking.PresentationMVC.Mapping
                 .ConvertUsing<CustomBankAccountConverter>();
 
             CreateMap<CurrentAccountViewModel, CurrentAccountDTO>();
+            CreateMap<DepositAccountViewModel, DepositAccountDTO>();
+            CreateMap<CreditAccountViewModel, CreditAccountDTO>();
         }
     }
 
@@ -46,15 +48,18 @@ namespace PersonalBanking.PresentationMVC.Mapping
             BankAccountDTO dtoResult = null;
             if (source.AccNum.Substring(source.AccNum.Length - 2).Contains("CR"))
             {
-                var vSource = new CurrentAccountViewModel() {AccNum = source.AccNum,Balance = source.Balance,Currency = source.Currency,Id = source.Id,OpenDate = source.OpenDate,Restricted = source.Restricted};
-                //var vSource = source as CurrentAccountViewModel;
+                var vSource = new CurrentAccountViewModel() {AccNum = source.AccNum,Balance = source.Balance,Currency = source.Currency,Id = source.Id,OpenDate = source.OpenDate,Restricted = source.Restricted}; 
                 dtoResult = Mapper.Map<CurrentAccountViewModel, CurrentAccountDTO>(vSource);
             }
             if (source.AccNum.Contains("CRED"))
             {
-                var vSource = new () { AccNum = source.AccNum, Balance = source.Balance, Currency = source.Currency, Id = source.Id, OpenDate = source.OpenDate, Restricted = source.Restricted };
-                //var vSource = source as CurrentAccountViewModel;
-                dtoResult = Mapper.Map<CurrentAccountViewModel, CurrentAccountDTO>(vSource);
+                var vSource = new CreditAccountViewModel() { AccNum = source.AccNum, Balance = source.Balance, Currency = source.Currency, Id = source.Id, OpenDate = source.OpenDate,Rate = source.Rate,Reimbursement = source.Reimbursement};
+                dtoResult = Mapper.Map<CreditAccountViewModel, CreditAccountDTO>(vSource);
+            }
+            if (source.AccNum.Contains("DEP"))
+            {
+                var vSource = new DepositAccountViewModel() { AccNum = source.AccNum, Balance = source.Balance, Currency = source.Currency, Id = source.Id, OpenDate = source.OpenDate,DepIntRate = source.DepIntRate};
+                dtoResult = Mapper.Map<DepositAccountViewModel,DepositAccountDTO>(vSource);
             }
             return dtoResult;
         }

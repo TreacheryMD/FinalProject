@@ -8,7 +8,7 @@ namespace PersonalBanking.Domain.Model.Account
 {
     public class DepositAccount : BankAccount
     {
-        public virtual double DepIntRate { get; }
+        public virtual double DepIntRate { get; set; }
 
         public DepositAccount(Person person, string accNum, decimal balance, double depositInterestRate, DateTime openDate, CurrencyTypes currency) :
             base(person, balance, accNum + "DEP", openDate, currency)
