@@ -1,4 +1,5 @@
-﻿@{
+﻿@using System.Web.Optimization
+@{
     if (Session["UserId"] == null && !ReferenceEquals(Session["IsAdmin"], "True"))
     {
         Response.Redirect("~/User/Login");
@@ -16,6 +17,9 @@
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
     <link href="~/Content/leftSideNav.css" rel="stylesheet" />
+
+
+
 
     <style>
         .panel-footer.panel-custom {
@@ -55,6 +59,7 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Wellcome @Session["Username"] <span class="caret"></span></a>
                         <ul class="dropdown-menu">
+                            <li><a href="@Url.Action("Index", "AdminUser")"><span class="glyphicon glyphicon-menu-down"></span>Admin menu</a></li>
                             <li><a href="@Url.Action("LogOut", "User")"><span class="glyphicon glyphicon-log-out"></span>Log Out</a></li>
                         </ul>
                     </li>
@@ -62,24 +67,24 @@
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
     </nav>
-<div class="body-content">
-    
-    <div id="sideNav" class="sidenav">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="#">@Html.ActionLink("Users", "Users", "AdminUser")</a>
-        <a href="#">@Html.ActionLink("Bank Accounts", "BankAccount", "AdminBankAccount")</a>
-        <a href="#">@Html.ActionLink("Persons", "Person", "AdminPerson")</a>
-        <a href="#">Card Accounts</a>
-        <a href="#">Transaction Log</a>
-        
+    <div class="body-content">
 
+        <div id="sideNav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="#">@Html.ActionLink("Users", "Users", "AdminUser")</a>
+            <a href="#">@Html.ActionLink("Bank Accounts", "BankAccount", "AdminBankAccount")</a>
+            <a href="#">@Html.ActionLink("Persons", "Person", "AdminPerson")</a>
+            <a href="#">Card Accounts</a>
+            <a href="#">Transaction Log</a>
+
+
+        </div>
+
+        <div id="main">
+            <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Tools</span>
+            @RenderBody()
+        </div>
     </div>
-    
-    <div id="main">
-        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Tools</span>
-        @RenderBody()
-    </div>
-</div>
     <div class="panel-footer panel-custom navbar-fixed-bottom text-center">
         <p>&copy; @DateTime.Now.Year - Personal Banking</p>
     </div>
@@ -94,5 +99,11 @@
     <script src="~/Scripts/ValidateDateRange.js"></script>
 
     <script src="~/Scripts/leftSideNavOpenClose.js"></script>
+
+    @Scripts.Render("~/bundles/datatables")
+    @Styles.Render("~/Content/datatables")
+
+    @RenderSection("Scripts")
+
 </body>
 </html>

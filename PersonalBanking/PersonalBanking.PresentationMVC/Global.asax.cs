@@ -5,12 +5,12 @@ using Castle.Windsor.Installer;
 using PersonalBanking.PresentationMVC.Windsor_Utils;
 using PersonalBanking.Infrastructure;
 using PersonalBanking.PresentationMVC.Mapping;
+using System.Web.Optimization;
 
 namespace PersonalBanking.PresentationMVC
 {
     public class MvcApplication : System.Web.HttpApplication
     {
-
         protected void Application_Start()
         {
             HtmlHelper.ClientValidationEnabled = true;
@@ -22,7 +22,7 @@ namespace PersonalBanking.PresentationMVC
             var ioc = new IoC("PersonalBankingW");
             ioc.RegisterAll(container.Kernel);
             ControllerBuilder.Current.SetControllerFactory(new WindsorControllerFactory(container.Kernel));
-
+            BundleConfig.RegisterBundles(BundleTable.Bundles);
             ControllerBuilder.Current.SetControllerFactory(new WindsorControllerFactory(container.Kernel));
 
             AutoMapper.Mapper.Initialize(c =>
@@ -32,7 +32,6 @@ namespace PersonalBanking.PresentationMVC
                 c.AddProfile(typeof(BLL.Mapping));
             });
         }
-
     }
 
 

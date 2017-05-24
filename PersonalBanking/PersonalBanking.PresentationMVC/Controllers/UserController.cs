@@ -90,7 +90,7 @@ namespace PersonalBanking.PresentationMVC.Controllers
             {
                 return RedirectToAction("Index", "AdminUser");
             }
-            return RedirectToAction("Banking");
+            return RedirectToAction("Index", "ClientBanking");
         }
 
         public string Banking()

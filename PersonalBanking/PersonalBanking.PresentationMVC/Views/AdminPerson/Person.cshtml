@@ -1,52 +1,59 @@
-﻿@model IEnumerable<PersonalBanking.PresentationMVC.Models.PersonViewModel>
-
+﻿
 @{
     ViewBag.Title = "Person";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>Person</h2>
+<h2>Persons</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.FirstName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.LastName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.BirthDate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FiscalCode)
-        </th>
-        <th></th>
-    </tr>
+@model IEnumerable<PersonalBanking.PresentationMVC.Models.PersonViewModel>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.FirstName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.LastName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.BirthDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.FiscalCode)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-        </td>
-    </tr>
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-primary list-panel" id="list-panel">
+            <div class="panel-heading list-panel-heading">
+                <h1 class="panel-title list-panel-title">Assets</h1>
+            </div>
+            <div class="panel-body">
+                <table id="assets-data-table" 
+
+                       class="table table-striped table-bordered" 
+
+                       style="width:100%">
+                    <thead>
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Gender</th>
+                        <th>Fiscal code</th>
+                        <th>Birth date</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach (var asset in Model)
+                    {
+                        <tr>
+                            <td>@asset.FirstName</td>
+                            <td>@asset.LastName</td>
+                            <td>@asset.Gender</td>
+                            <td>@asset.FiscalCode</td>
+                            <td>@asset.BirthDate</td>
+                        </tr>
+                    }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts
+{    
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $('#assets-data-table').DataTable();
+        });
+    </script>       
 }
 
-</table>

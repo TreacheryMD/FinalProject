@@ -28,8 +28,7 @@ namespace PersonalBanking.PresentationMVC.Controllers
         {
             ViewBag.Name = "test";
 
-            var bankacc = _bankAccountRepository.GetById(1);
-            return View(bankacc);
+            return View();
         }
     }
 }
