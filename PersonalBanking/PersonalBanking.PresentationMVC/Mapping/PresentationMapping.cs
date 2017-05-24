@@ -38,6 +38,8 @@ namespace PersonalBanking.PresentationMVC.Mapping
             CreateMap<CurrentAccountViewModel, CurrentAccountDTO>();
             CreateMap<DepositAccountViewModel, DepositAccountDTO>();
             CreateMap<CreditAccountViewModel, CreditAccountDTO>();
+
+            CreateMap<PersonDTO, PersonViewModel>().ReverseMap();
         }
     }
 

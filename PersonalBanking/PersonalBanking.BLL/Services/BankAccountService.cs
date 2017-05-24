@@ -41,10 +41,29 @@ namespace PersonalBanking.BLL.Services
         public void Save(BankAccountDTO bankAccountDto)
         {
             var bankAccount = _bankAccountRepository.GetById(bankAccountDto.Id);
-                       
+
+            bankAccount.AccNum = bankAccountDto.AccNum;
+            bankAccount.Balance = bankAccountDto.Balance;
+            bankAccount.Currency = bankAccountDto.Currency;
+            bankAccount.OpenDate = bankAccountDto.OpenDate;
+
+            if (bankAccountDto.AccNum.Substring(bankAccountDto.AccNum.Length - 2).Contains("CR"))
+            {
+                ((CurrentAccount)bankAccount).Restricted = ((CurrentAccountDTO)bankAccountDto).Restricted;
+               
+            }
+            else if (bankAccountDto.AccNum.Contains("CRED"))
+            {
+                ((CreditAccount)bankAccount).Rate = ((CreditAccountDTO)bankAccountDto).Rate;
+                ((CreditAccount)bankAccount).Reimbursement = ((CreditAccountDTO)bankAccountDto).Reimbursement;
+            }
+            else if (bankAccountDto.AccNum.Contains("DEP"))
+            {
+                ((DepositAccount)bankAccount).DepIntRate = ((DepositAccountDTO)bankAccountDto).DepIntRate;   
+            }
+
             _bankAccountRepository.SaveOrUpdate(bankAccount);
             _transaction.Commit();
-
         }
 
         public void Delete(int bankAccountId)

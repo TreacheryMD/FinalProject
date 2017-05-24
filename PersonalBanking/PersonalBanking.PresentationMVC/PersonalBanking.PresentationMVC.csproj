@@ -186,6 +186,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminBankAccountController.cs" />
+    <Compile Include="Controllers\AdminPersonController.cs" />
     <Compile Include="Controllers\AdminUserController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UserController.cs" />
@@ -200,6 +201,7 @@
     <Compile Include="Models\CurrentAccountViewModel.cs" />
     <Compile Include="Models\DepositAccountViewModel.cs" />
     <Compile Include="Models\LoginViewModel.cs" />
+    <Compile Include="Models\PersonViewModel.cs" />
     <Compile Include="Models\UserViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Validation\ValidateDateRange.cs" />
@@ -225,6 +227,7 @@
     <Content Include="Views\AdminBankAccount\BankAccount.cshtml" />
     <Content Include="Views\AdminBankAccount\DeleteBankAccount.cshtml" />
     <Content Include="Views\AdminBankAccount\EditBankAccount.cshtml" />
+    <Content Include="Views\AdminPerson\Person.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

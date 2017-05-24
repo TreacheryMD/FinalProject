@@ -1,19 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Web;
 using PersonalBanking.Domain.Model;
 
-namespace PersonalBanking.BLL.DTO
+namespace PersonalBanking.PresentationMVC.Models
 {
-    public class PersonDTO : EntityBaseDTO
+    public class PersonViewModel
     {
+        [Required]
         public string FirstName { get; set; }
+        [Required]
         public string LastName { get; set; }
+        [Required]
         public DateTime BirthDate { get; set; }
+        [Required]
         public string FiscalCode { get; set; }
+        [Required]
         public GenderType Gender { get; set; }
-
     }
 }
