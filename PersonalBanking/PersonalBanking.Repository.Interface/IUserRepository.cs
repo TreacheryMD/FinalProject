@@ -11,5 +11,7 @@ namespace PersonalBanking.Repository.Interface
     {
         IList<User> GetUserByPersonId(int personId);
         string[] CheckUser(string userName, string password);
+        int GetUserPersonId(int userId);
+        bool IsUsernameUnique(string username);
     }
 }

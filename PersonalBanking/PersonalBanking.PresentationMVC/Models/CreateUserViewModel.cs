@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Data;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 using Castle.DynamicProxy.Generators.Emitters.SimpleAST;
 using PersonalBanking.Domain.Model;
 using PersonalBanking.PresentationMVC.Validation;
@@ -19,7 +21,7 @@ namespace PersonalBanking.PresentationMVC.Models
         [RegularExpression("(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{6,}", ErrorMessage = "Password is to simple.")]
         public string Password { get; set; }
         [Required]
-        [Compare("Password")]
+        [System.ComponentModel.DataAnnotations.Compare("Password")]
         [Display(Name = "Confirm Passowrd:")]
         public  string ConfirmPassword { get; set; }
         [Required]

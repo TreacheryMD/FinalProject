@@ -82,6 +82,12 @@
                         </div>
                         <div style="margin-top: 20px; padding-left: 20%">
                             @Html.ValidationSummary("", new {@class = "text-danger"})
+                            @{
+                                if (!String.IsNullOrEmpty(ViewBag.UsernameError))
+                                {
+                                    <span class="text-danger">@ViewBag.UsernameError.ToString()</span>
+                                }
+                            }
                         </div>
 
                     </div>

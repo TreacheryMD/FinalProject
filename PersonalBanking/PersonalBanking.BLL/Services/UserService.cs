@@ -66,7 +66,12 @@ namespace PersonalBanking.BLL.Services
         public string[] CheckUser(string userName, string password)
         {
            return _userRepository.CheckUser(userName, password);
-        }   
+        }
+
+        public bool IsUsernameUnique(string userName)
+        {
+            return _userRepository.IsUsernameUnique(userName);
+        }
     }
 }
 

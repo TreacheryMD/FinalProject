@@ -10,6 +10,7 @@ namespace PersonalBanking.Repository.Interface
     public interface IBankAccountRepository : IRepository<BankAccount>
     {
         IList<BankAccount> GetByAccountNumber(string accNumber);
+        IList<CurrentAccount> GetCureAccountsByPersonId(int personId); 
 
     }
 }

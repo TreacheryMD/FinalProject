@@ -35,7 +35,7 @@ namespace PersonalBanking.PresentationMVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Register(CreateUserViewModel model)
         {
-            if (ModelState.IsValid)
+            if (ModelState.IsValid && _userService.IsUsernameUnique(model.Username))
             {
                 var pers = new PersonDTO()
                 {
@@ -60,7 +60,7 @@ namespace PersonalBanking.PresentationMVC.Controllers
             }
             else
             {
-                // there is a validation error
+                ViewBag.UsernameError = "Choose another username.";
                 return View();
             }
         }
@@ -91,11 +91,6 @@ namespace PersonalBanking.PresentationMVC.Controllers
                 return RedirectToAction("Index", "AdminUser");
             }
             return RedirectToAction("Index", "ClientBanking");
-        }
-
-        public string Banking()
-        {
-            return "user banking will be here";
         }
 
         public ActionResult LogOut()

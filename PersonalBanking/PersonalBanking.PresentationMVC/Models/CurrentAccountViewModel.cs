@@ -14,8 +14,12 @@ namespace PersonalBanking.PresentationMVC.Models
         public decimal Balance { get; set; }
         public DateTime OpenDate { get; set; }
         public CurrencyTypes Currency { get; set; }
-        //public PersonDTO Person { get; set; }
         public bool Restricted { get; set; }
+
+
+        public string AccNumSource { get; set; }
+        public string AccNumTarget { get; set; }
+        public decimal TransferAmmount { get; set; }
 
     }
 }

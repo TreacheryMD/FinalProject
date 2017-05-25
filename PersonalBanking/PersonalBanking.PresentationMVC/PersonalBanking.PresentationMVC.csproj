@@ -484,6 +484,7 @@
     <Content Include="Views\AdminPerson\Person.cshtml" />
     <Content Include="Views\Shared\_LayoutClient.cshtml" />
     <Content Include="Views\ClientBanking\Index.cshtml" />
+    <Content Include="Views\ClientBanking\CurrentBankAccounts.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
