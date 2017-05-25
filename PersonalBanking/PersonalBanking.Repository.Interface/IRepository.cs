@@ -14,5 +14,6 @@ namespace PersonalBanking.Repository.Interface
         void Delete(T entity); 
         T GetById(int id); 
         IList<T> GetAll();
+        void Add(T entity);
     }
 }

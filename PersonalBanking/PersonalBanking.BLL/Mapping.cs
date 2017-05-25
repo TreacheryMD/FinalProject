@@ -30,6 +30,8 @@ namespace PersonalBanking.BLL
             CreateMap<CurrentAccount, CurrentAccountDTO>();
             CreateMap<DepositAccount, DepositAccountDTO>();
             CreateMap<CreditAccount, CreditAccountDTO>();
+
+            
         }
     }
 }

@@ -52,14 +52,22 @@
     <div class="col-md-2"></div>
     <div class="col-md-8">
         <div class="text-center table-bordered" style="background-color:aliceblue">
-            <h2>Transfer section:</h2>
+            <h2>Transfer money! It's free for you!!!</h2>
             <h5><span style="color: red"> We have 0% comission for our clients!</span></h5>
             <p>Indicate source account and target account. And we will transfer it instantly.</p>
         </div>
         
-        @Html.ActionLink("Transfer now!","Transfer");
+        <div class="text-center" style="margin-top: 3%">
+            @*@Html.ActionLink("Transfer now!", "Transfer","ClientBanking");*@
+            
+            <button type="submit" class="btn btn-lg btn-info" onclick="location.href='@Url.Action("Transfer", "ClientBanking")'" style="max-width: 30%">TRANSFER RIGHT NOW</button>
+            <div>
+                <img src="~/Images/transfer.jpg"/>    
+            </div>
+        </div>
+        
 
-        @*@using (Html.BeginForm("Transfer", "ClientBanking", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                @*@using (Html.BeginForm("Transfer", "ClientBanking", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
         {
             @Html.AntiForgeryToken()
             <form class="form-inline">
@@ -82,7 +90,7 @@
                             }
                         }
                     </select>
-                    
+
                     <div class="" style="position: relative; margin-top: 2%">
                         <button type="submit" class="btn btn-lg btn-block btn-info" style="max-width: 30%">Execute transfer</button>
                     </div>

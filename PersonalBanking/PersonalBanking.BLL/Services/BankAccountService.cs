@@ -77,5 +77,15 @@ namespace PersonalBanking.BLL.Services
         {
             throw new NotImplementedException();
         }
+
+        public BankAccount GetBankAccountById(int bankAccountId)
+        {
+            return _bankAccountRepository.GetById(bankAccountId);
+        }
+
+        public BankAccount GetbankAccountByAccNumber(string bankAccountNumber)
+        {
+            return _bankAccountRepository.GetByAccountNumber(bankAccountNumber);
+        }
     }
 }

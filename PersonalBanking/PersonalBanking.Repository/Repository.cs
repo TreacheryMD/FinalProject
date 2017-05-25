@@ -49,6 +49,12 @@ namespace PersonalBanking.Repository
             return Session.QueryOver<T>().List();
         }
 
+        public void Add(T entity)
+        {
+            Session.SaveOrUpdate(entity);
+            
+        }
+
         public T GetById(int id)
         {
             return Session.Get<T>(id); 

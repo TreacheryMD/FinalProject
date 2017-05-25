@@ -336,6 +336,7 @@
     <Content Include="Images\goldenCoins.jpg" />
     <Content Include="Images\startBanking.jpg" />
     <Content Include="Images\onlineBanking.jpg" />
+    <Content Include="Images\transfer.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Content\DataTables\css\semanticui.scss" />
@@ -456,6 +457,7 @@
     <Compile Include="Models\DepositAccountViewModel.cs" />
     <Compile Include="Models\LoginViewModel.cs" />
     <Compile Include="Models\PersonViewModel.cs" />
+    <Compile Include="Models\TransferingViewModel.cs" />
     <Compile Include="Models\UserViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Validation\ValidateDateRange.cs" />
@@ -485,6 +487,7 @@
     <Content Include="Views\Shared\_LayoutClient.cshtml" />
     <Content Include="Views\ClientBanking\Index.cshtml" />
     <Content Include="Views\ClientBanking\CurrentBankAccounts.cshtml" />
+    <Content Include="Views\ClientBanking\Transfer.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -15,9 +15,11 @@ namespace PersonalBanking.Repository
         {
         }
 
-        public IList<BankAccount> GetByAccountNumber(string accNumber)
+        public BankAccount GetByAccountNumber(string accNumber)
         {
-            return Session.QueryOver<BankAccount>().Where(w => w.AccNum == accNumber).List();
+            return Session.QueryOver<BankAccount>()
+                .Where(w=>w.AccNum == accNumber)
+                .SingleOrDefault();
         }
 
         public IList<CurrentAccount> GetCureAccountsByPersonId(int personId)

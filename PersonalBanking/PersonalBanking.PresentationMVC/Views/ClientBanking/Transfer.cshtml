@@ -1,0 +1,46 @@
+﻿@model IEnumerable<PersonalBanking.PresentationMVC.Models.CurrentAccountViewModel>
+
+@{
+    ViewBag.Title = "Transfer";
+    Layout = "~/Views/Shared/_LayoutClient.cshtml";
+}
+
+<h2>Transfer</h2>
+
+@using (Html.BeginForm("Transfer", "ClientBanking", FormMethod.Post, new {@class = "form-horizontal", role = "form"}))
+{
+    @Html.AntiForgeryToken()
+    <form class="form-inline">
+        <div style="margin-top: 3%">
+            <label>Source:</label>
+            <select id="sourceCurrentAccount" name="SourceBankAccountNumber" class="form-control" style="max-width: 10%;">
+                @{
+                    foreach (var item in Model)
+                    {
+                        <option value="@item.AccNum">@item.AccNum @item.Currency</option>
+                    }
+                }
+            </select>
+            <label>Target:</label>
+            <select id="targetCurrentAccount" name="TargetBankAccountNumber" class="form-control" style="max-width: 10%">
+                @{
+                    foreach (var item in Model)
+                    {
+                        <option value="@item.AccNum">@item.AccNum @item.Currency </option>
+                    }
+                }
+            </select>
+            <div class="input-group" style="margin-top: 1%">
+                <span class="input-group-addon">Ammount</span>
+                <input id="Ammount" type="number" class="form-control" name="Ammount" placeholder="Amount" style="max-width: 6%" min="0" required>
+                
+
+            </div>
+            <div class="" style="position: relative; margin-top: 2%">
+                <button type="submit" class="btn btn-lg btn-block btn-info" style="max-width: 15%">Execute transfer</button>
+            </div>
+        </div>
+    </form>
+}
+
+
