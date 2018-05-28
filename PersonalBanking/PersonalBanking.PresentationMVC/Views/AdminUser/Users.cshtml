@@ -1,0 +1,53 @@
+﻿@using PersonalBanking.PresentationMVC.Models;
+@model IEnumerable<UserViewModel>
+
+@{
+    ViewBag.Title = "Users";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Users</h2>
+
+<div>
+    <h4>Users</h4>
+    <hr />
+    <table class="table table-striped table-bordered table-condensed table-hover ">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Username)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsAdmin)
+            </th>
+            <th>Actions</th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            @Html.HiddenFor(m => item.Id)
+            <tr>
+                <td>
+                    @Html.DisplayFor(m => item.Username)
+                </td>
+                <td>
+                    @Html.DisplayFor(m => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(m => item.IsAdmin)
+                </td>
+                <td>
+                    <p>
+                        @Html.ActionLink("Edit", "EditUser", new { userId = item.Id }) |
+                        @Html.ActionLink("Delete", "DeleteUser", new {userId = item.Id})
+                    </p>
+                </td>
+            </tr>
+
+        }
+    </table>
+</div>
+@section Scripts
+{ }

@@ -1,0 +1,59 @@
+﻿
+@{
+    ViewBag.Title = "Person";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Persons</h2>
+
+@model IEnumerable<PersonalBanking.PresentationMVC.Models.PersonViewModel>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-primary list-panel" id="list-panel">
+            <div class="panel-heading list-panel-heading">
+                <h1 class="panel-title list-panel-title">Assets</h1>
+            </div>
+            <div class="panel-body">
+                <table id="assets-data-table" 
+
+                       class="table table-striped table-bordered" 
+
+                       style="width:100%">
+                    <thead>
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Gender</th>
+                        <th>Fiscal code</th>
+                        <th>Birth date</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach (var asset in Model)
+                    {
+                        <tr>
+                            <td>@asset.FirstName</td>
+                            <td>@asset.LastName</td>
+                            <td>@asset.Gender</td>
+                            <td>@asset.FiscalCode</td>
+                            <td>@asset.BirthDate</td>
+                        </tr>
+                    }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts
+{    
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $('#assets-data-table').DataTable();
+        });
+    </script>       
+}
+
